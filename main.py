@@ -154,6 +154,7 @@ async def main():
 
     try:
         mqtt_client.connect(user_config.mqtt_broker, port=1883)
+        mqtt_client.loop_start()
     except Exception as ex:
         logger.error('mqtt connection error %s', ex)
 
